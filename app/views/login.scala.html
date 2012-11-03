@@ -1,0 +1,49 @@
+@(error : String)(displayError: String)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Community Notes</title>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap-responsive.min.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/icon.png")">
+    </head>
+    <body>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <ul class="nav js-global-actions">
+				<li class="home" data-global-action="t1home">
+					<a class="nav-logo-link" data-nav="front" href="/">
+						<i class="bird-topbar-blue bar-icon"></i>
+					</a>
+				</li>
+			</ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <form class="form-signin" method="post" action="/login">
+        <div class="alert alert-error" style="display:@displayError">@error</div>  
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input type="text" class="input-block-level" name="mail" placeholder="Email address">
+        <input type="password" class="input-block-level" name="pwd" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+        <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <a href="" class="btn btn-link" type="submit">Sign up</a>
+
+      </form>
+
+    </div> <!-- /container -->
+    
+        
+    </body>
+   
+   <script src="@routes.Assets.at("javascripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+   <script src="@routes.Assets.at("javascripts/bootstrap.min.js")" type="text/javascript"></script>
+</html>
